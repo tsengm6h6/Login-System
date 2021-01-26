@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F8F9FD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #7a54b7;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  width: 50%;
+  max-width: 400px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(to right top, rgba(248,249,253,0.8), rgba(248, 249, 253, 1));
+  box-shadow: 6px 6px 20px rgba(122,122,122,0.2);
+  border-radius: 15px;
+}
+
+h1, .input-row, button {
+  margin: 1rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: 'Lobster Two', cursive;
+  letter-spacing: 2px;
+}
+
+.input-row {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  background-color: #F8F9FD;
+  box-shadow: 3px 3px 20px rgba(122,122,122,0.1);
+  border-radius: 5px;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  padding: 30px 2rem 0px;
+  outline: none;
+  border: none;
+  background-color: none;
+  color: #8764c2;
+}
+
+input:focus, label:focus, span:focus{
+  outline: none;
+}
+
+.input-label{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.label-content {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+}
+
+i {
+  margin-right: 5px;
+}
+
+button {
+  padding: 0.8rem 3rem;
+  color: #F8F9FD;
+  background: linear-gradient(to right bottom,
+ rgba(135, 100, 194, 0.8), rgba(135, 100, 194, 1));
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  box-shadow: 3px 3px 10px rgba(135, 100, 194, 0.4);
+  cursor: pointer;
+  position: relative;
+}
+
+button:active {
+  top: 1px;
+  box-shadow: 0px 0px 10px rgba(135, 100, 194, 0.4);;
+}
+
+input:focus + .input-label .label-content,
+input:valid + .input-label .label-content {
+  bottom: 30px;
+}
+
+.circle1 {
+  width: 20rem;
+  height: 20rem;
+  background: rgba(135, 100, 194);
+ border-radius: 50%;
+ position: absolute;
+ bottom: -30%;
+ left: 8%;
+ z-index: -2;
+}
+
+.circle2 {
+  width: 40rem;
+  height: 40rem;
+  background: rgba(122, 84, 183);
+ border-radius: 50%;
+ position: absolute;
+ top: -32%;
+ right: -14%;
+ z-index: -2;
+}

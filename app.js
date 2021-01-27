@@ -48,7 +48,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // setting static files
 app.use(express.static('public'))
 
-
 app.get('/', (req, res) => {
   res.render('index')
 })
@@ -61,7 +60,7 @@ app.post('/login', (req, res) => {
 
 app.get('/dashboard/:user', (req, res) => {
   const user = users.find(user => user.email === req.params.user)
-  res.render('dashboard', { user: user.firstName })
+  return res.render('dashboard', { user: user.firstName })
 })
 
 app.listen(port, () => {

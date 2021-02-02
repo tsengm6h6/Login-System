@@ -9,7 +9,12 @@ router.get('/', (req, res) => {
 router.post('/login', (req, res) => {
   const { email, password } = req.body
   const user = users.find(user => user.email === email && user.password === password)
-  user ? res.redirect(`/dashboard/${user.email.toLowerCase()}`) : res.render('index', { error: true })
+  if (!user) {
+    res.render('index', { error: true })
+  } else {
+    res.setHeader('Set-Cookie', `user = ${user.email}`)
+    res.redirect(`/dashboard/${user.email.toLowerCase()}`)
+  }
 })
 
 module.exports = router

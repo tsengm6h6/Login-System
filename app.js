@@ -3,6 +3,11 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+// require express-session
+const session = require('express-session')
+// connect Mongodb
+// const MongoStore = require('connect-mongo')(session)
+
 // require express-handlebars
 const hbs = require('express-handlebars')
 
@@ -15,6 +20,13 @@ const routes = require('./routes')
 // setting template engine
 app.engine('handlebars', hbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
+
+// setting session
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false
+}))
 
 // setting body-parser
 app.use(bodyParser.urlencoded({ extended: true }))

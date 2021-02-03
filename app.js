@@ -6,7 +6,7 @@ const port = 3000
 // require express-session
 const session = require('express-session')
 // connect Mongodb
-// const MongoStore = require('connect-mongo')(session)
+const MongoStore = require('connect-mongo')(session)
 
 // require express-handlebars
 const hbs = require('express-handlebars')
@@ -25,7 +25,15 @@ app.set('view engine', 'handlebars')
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60
+  },
+  store: new MongoStore({
+    url: 'mongodb://localhost/login-session',
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
 }))
 
 // setting body-parser

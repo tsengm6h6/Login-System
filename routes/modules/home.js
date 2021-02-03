@@ -14,7 +14,8 @@ router.post('/login', (req, res) => {
   if (!user) {
     res.render('index', { error: true })
   } else { // 若使用者存在，則在session中存取user.id供後續使用，並前往個人化頁面
-    req.session.userId = user.id
+    req.session.name = user.firstName
+    console.log(req.session)
     res.redirect('/dashboard')
   }
 })

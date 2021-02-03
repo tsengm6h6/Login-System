@@ -1,0 +1,29 @@
+<form action="/register" method='POST' class="container">
+  <h1>Register</h1>
+
+  {{#if error}}
+  <p class="warning mr-auto">Email has been registered.</p>
+  <p class="warning mr-auto">Please try again!</p>
+  {{/if}}
+
+  <div class="input-row">
+    <input type="text" name='username' id='username' autocomplete="on" required>
+    <label for="username" class='input-label'>
+      <span class='label-content'><i class="fas fa-user"></i>User Name</span>
+    </label>
+  </div>
+
+  <div class="input-row">
+    <input type="text" name='email' id='email' autocomplete="on" required>
+    <label for="email" class='input-label'>
+      <span class='label-content'><i class="fas fa-user"></i>Email</span>
+    </label>
+  </div>
+  <div class="input-row">
+    <input type="text" name='password' id='password' autocomplete="on" required>
+    <label for="password" class='input-label'>
+      <span class='label-content'><i class="fas fa-lock"></i>Password</span>
+    </label>
+  </div>
+  <button>Register</button>
+</form>

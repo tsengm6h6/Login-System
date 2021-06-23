@@ -1,12 +1,29 @@
-# Login-System-Implementation
-A simple web application for implementing user login system
+# Login-System
+手刻登入驗證機制，了解 HTTP 無狀態機制與 Cookie 和 Session 之間的關係
 
-## Features
-1. Login with existing accounts ( Please find below testing account )
-2. Show user's personal dashboard if login success, otherwise, show the error message
-3. Track pageviews and show on user's dashboard
-4. Register a new account
-5. Logout
+## 實作重點
+- 使用者可以註冊新帳號，並使用已註冊的帳號登入
+- 驗證使用者帳號允許登入或顯示錯誤訊息
+- 登入成功後顯示使用者姓名，刷新頁面可以記錄使用者訪問次數（模擬紀錄登入狀態）
+- 登出後，再重新登入訪問次數重計（模擬 Session 重啟）
+
+### 測試帳號
+**Tony**
+> 帳號：tony@stark.com 密碼：iamironman
+
+**Steve**
+> 帳號：captain@hotmail.com 密碼：icandothisallday
+
+**Peter**
+> 帳號：peter@parker.com 密碼：enajyram
+
+**Natasha**
+> 帳號：natasha@gamil.com 密碼：*parol#@$!
+
+**Nick**
+> 帳號：nick@shield.com 密碼：password
+
+![alt 首頁](https://i.imgur.com/EhovB9j.gif)
 
 ## Installation
 
@@ -51,24 +68,3 @@ $ npm run dev
 The server is listening to port 3000
 ```
 You may now visit the application on your browser with URL: http://localhost:3000
-
-## Testing Account
-- **Tony**
-
-    Email : tony@stark.com, Password : iamironman
-
-- **Steve**
-
-    Email : captain@hotmail.com, Password : icandothisallday
-
-- **Peter**
-  
-    Email : peter@parker.com, Password : enajyram
-
-- **Natasha**
-
-    Email : natasha@gamil.com, Password : *parol#@$!
-
-- **Nick**
-
-    Email : nick@shield.com, Password : password
